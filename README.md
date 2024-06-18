@@ -29,6 +29,8 @@ Projeto do curso "Django: CRUD e persistência no S3" da Alura
 - pip install django
 - pip install python-dotenv
 - pip install virtualenv
+- pip install django-storages
+- pip install boto3
 
 ## Exibir pacotes instalados
 
@@ -51,6 +53,10 @@ Projeto do curso "Django: CRUD e persistência no S3" da Alura
 - python manage.py migrate => roda a migration
 - python manage.py shell => abre o shell do Django
 - python manage.py createsuperuser => cria o super usuario
+
+### Comando para criar secret key para o django
+
+- python3 secret_key_generator.py
 
 ### Comandos para inicializar o projeto
 
