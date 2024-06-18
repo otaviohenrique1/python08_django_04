@@ -1,6 +1,8 @@
+{% extends 'shared/base.html' %}
 {% load static %}
+{% block content %}
 
-<!DOCTYPE html>
+{% comment %} <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -20,11 +22,6 @@
     <div class="pagina-inicial">
         <header class="cabecalho">
             <img src="{% static '/assets/logo/Logo(2).png' %}" alt="Logo da Alura Space" />
-            {% comment %} {% for message in messages %}
-                <div class="alert alert-primary" role="alert">
-                    <p id="messages">{{ message }}</p>
-                </div>
-            {% endfor %} {% endcomment %}
             {% include "partials/_alertas.html" %}
             <div class="cabecalho__busca">
                 <div class="busca__fundo">
@@ -45,7 +42,7 @@
                     <a href="{% url 'cadastro' %}"><img src="{% static '/assets/ícones/1x/Novas - inativo.png' %}"> Cadastrar</a>
                     <a href="{% url 'logout' %}"><img src="{% static '/assets/ícones/1x/Surpreenda-me - inativo.png' %}"> Logout</a>
                 </nav>
-            </section>
+            </section> {% endcomment %}
             <section class="galeria" style="margin-left: 5em">
                 <form action="{% url 'login' %}" method="POST">
                     {% csrf_token %}
@@ -72,6 +69,7 @@
             </section>
         </main>
     </div>
-</body>
+{% comment %} </body> {% endcomment %}
 
-{% include 'partials/_footer.html' %}
+{% comment %} {% include 'partials/_footer.html' %} {% endcomment %}
+{% endblock %}
